@@ -26,10 +26,11 @@ $ statik --port 3000 ~/Sites/project
 
 ### Other command line options
 
-**maxAge**: browser cache maxAge in milliseconds. Defaults to 0
-**hidden**: allow transfer of hidden files. Defaults to false
-**redirect**: redirect to trailing "/" when pathname is directory. Defaults to true
-**compress**: enable gzip compression. Defaults to true
+* **maxAge**: browser cache maxAge in milliseconds. Defaults to 0
+* **hidden**: allow transfer of hidden files. Defaults to false
+* **redirect**: redirect to trailing "/" when pathname is directory. Defaults to true
+* **compress**: enable gzip compression. Defaults to true
+* **verbose**: enable logging to stdout. Defaults to false
 
 ## Use it programmatically
 
