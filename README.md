@@ -108,3 +108,7 @@ will be an option to disable to default behaviour though.
 1. Clean up code around 404 and 500 errors
 2. Options to add/remove default HTTP headers
 3. Default set of files instead of `index.html`
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/hongymagic/statik/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
