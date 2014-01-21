@@ -20,7 +20,8 @@
   "dependencies": {
     "extend": "~1.2.1",
     "nopt": "~2.1.2",
-    "connect": "~2.11.0"
+    "connect": "~2.11.0",
+    "connect-modrewrite": "~0.5.11"
   },
   "devDependencies": {},
   "main": "index",
