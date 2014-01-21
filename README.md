@@ -31,6 +31,7 @@ $ statik --port 3000 ~/Sites/project
 * **redirect**: redirect to trailing "/" when pathname is directory. Defaults to true
 * **compress**: enable gzip compression. Defaults to true
 * **verbose**: enable logging to stdout. Defaults to false
+* **rewriteRule**: enable modrewrite functionality. Follow with a regex rule in standard appache notation. See: https://github.com/tinganho/connect-modrewrite
 
 ## Use it programmatically
 
@@ -59,6 +60,16 @@ var statik = require('statik');
 statik({
 	port: 3000,
 	root: '/Users/hongymagic/Sites'
+});
+```
+
+You can use a URL rewrite-rule:
+```javascript
+// app.js
+var statik = require('statik');
+statik({
+  port: 3000,
+  rewriteRule: '^/test$ /index.html'
 });
 ```
 
