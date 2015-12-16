@@ -6,7 +6,7 @@
 //
 
 var statik = require('../index');
-var server = statik.createServer();
+var server = statik();
 
 server.listen();
 console.log("server online at http://localhost:1203/");
