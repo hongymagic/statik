@@ -1,3 +1,5 @@
+> **WARNING**: Outdated. If anyone wants to claim the npm name `statik` for a better version of this package, please let me know via Issue or on twitter @hongymagic. I am more than happy to give up the name.
+
 # Statik
 
 A simple and easy-to-use Node.js module to server static files over HTTP. It's
