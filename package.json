@@ -18,17 +18,14 @@
     "url": "https://github.com/hongymagic/statik/issues"
   },
   "dependencies": {
+    "connect": "~2.11.0",
+    "connect-pushstate": "^1.0.0",
     "extend": "~1.2.1",
-    "nopt": "~2.1.2",
-    "connect": "~2.11.0"
+    "nopt": "~2.1.2"
   },
   "devDependencies": {},
   "main": "index",
   "bin": "./bin/statik",
-  "engines": {
-    "node": "0.x.x",
-    "npm": "1.x.x"
-  },
   "scripts": {
     "test": "grunt test"
   },

@@ -14,24 +14,34 @@ var usage = [
 '  --hidden      Allow hidden files to be served. Defaults to false.',
 '  --redirect    Redirect to trailing "/" when pathname is directory. Defaults to true.',
 '  --maxAge      Browser cache maxAge in milliseconds. Defaults to 0.',
-'  --verbose     Enable verbose logging to stdout. Defaults to false.'
+'  --verbose     Enable verbose logging to stdout. Defaults to false.',
+'  --pushstate   Enable fallback to index.html when requested URL does not exist.',
+'  --sslCert     Provde ssl cert for https server. Arg is path to cert minus the file extension'
 ].join('\n');
 
 var nopt = require('nopt');
 var path = require('path');
 var known = {
 	"port": Number,
-	"maxAge": Boolean,
+	"maxAge": Number,
 	"hidden": Boolean,
 	"redirect": Boolean,
 	"compress": Boolean,
 	"verbose": Boolean,
-	"help": Boolean
+	"help": Boolean,
+	"pushstate": Boolean,
+	"sslCert": String
 };
-var options = nopt(known);
+var shorthands = {
+	"p": ["--port"],
+	"a": ["--maxAge"],
+	"c": ["--compress"],
+	"s": ["--pushstate"]
+};
+var options = nopt(known, shorthands);
 
 if (options.help)
-	return console.log(usage);
+    return console.log(usage);
 
 if (options.argv.remain[0] !== undefined)
 	options.root = path.resolve(options.argv.remain[0]);

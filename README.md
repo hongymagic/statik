@@ -20,7 +20,7 @@ contents of `./public` served over HTTP.
 
 ```bash
 // Start server at http://localhost:3000 serving ./public
-$ static --port 3000
+$ statik --port 3000
 
 // Start server at http://localhost:3000 serving ~/Sites/project
 $ statik --port 3000 ~/Sites/project
@@ -33,6 +33,7 @@ $ statik --port 3000 ~/Sites/project
 * **redirect**: redirect to trailing "/" when pathname is directory. Defaults to true
 * **compress**: enable gzip compression. Defaults to true
 * **verbose**: enable logging to stdout. Defaults to false
+* **pushstate**: enable pushState compliant fallback to index.html. Defaults to false
 
 ## Use it programmatically
 
@@ -60,7 +61,8 @@ You can specify the directory you wish to serve as an argument.
 var statik = require('statik');
 statik({
 	port: 3000,
-	root: '/Users/hongymagic/Sites'
+	root: '/Users/hongymagic/Sites',
+	pushstate: true
 });
 ```
 
@@ -105,6 +107,10 @@ will be an option to disable to default behaviour though.
 
 > For now, it will translate that into `index.html`
 
+### What does the `pushstate` option does exactly?
+
+If the request url does not match an existing file, the `:root:/index.html` file will be served instead. This allows you to serve single page application that use the [`pushState API`](https://developer.mozilla.org/en-US/docs/Web/API/History_API).
+
 ## TODO
 
 1. Clean up code around 404 and 500 errors
@@ -113,4 +119,3 @@ will be an option to disable to default behaviour though.
 
 
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/hongymagic/statik/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-
