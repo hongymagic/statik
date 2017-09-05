@@ -14,6 +14,9 @@ var usage = [
 '  --hidden      Allow hidden files to be served. Defaults to false.',
 '  --redirect    Redirect to trailing "/" when pathname is directory. Defaults to true.',
 '  --maxAge      Browser cache maxAge in milliseconds. Defaults to 0.',
+'  --auth        Enable http-authentication. Defaults to false.',
+'  --authRealm   Window title for http-authentication. Defaults to "Restricted realm".',
+'  --authFile    Path to file with passwords. Defaults to "/../data/users.htpasswd".',
 '  --verbose     Enable verbose logging to stdout. Defaults to false.'
 ].join('\n');
 
@@ -25,6 +28,9 @@ var known = {
 	"hidden": Boolean,
 	"redirect": Boolean,
 	"compress": Boolean,
+  "auth": Boolean,
+  "authRealm": String,
+  "authFile": String,
 	"verbose": Boolean,
 	"help": Boolean
 };

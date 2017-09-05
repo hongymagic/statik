@@ -2,7 +2,7 @@
 
 # Statik
 
-A simple and easy-to-use Node.js module to server static files over HTTP. It's
+A simple and easy-to-use Node.js module to server static files over HTTP. Now with authentication option. It's
 super simple to use it.
 
 ## Command line usage
@@ -32,6 +32,9 @@ $ statik --port 3000 ~/Sites/project
 * **hidden**: allow transfer of hidden files. Defaults to false
 * **redirect**: redirect to trailing "/" when pathname is directory. Defaults to true
 * **compress**: enable gzip compression. Defaults to true
+* **auth**: enable http-authentication. Defaults to false
+* **authRealm**: set window title for http-authentication
+* **authFile**: path to htpasswd file
 * **verbose**: enable logging to stdout. Defaults to false
 
 ## Use it programmatically
@@ -53,19 +56,20 @@ serving `./public` directory.
 
 ### Customisations
 
-You can specify the directory you wish to serve as an argument.
+You can specify the directory you wish to serve as an argument. And/or set restricted access to website, if necessary.
 
 ```javascript
 // app.js
 var statik = require('statik');
 statik({
 	port: 3000,
-	root: '/Users/hongymagic/Sites'
+	root: '/Users/hongymagic/Sites',
+	auth: true
 });
 ```
 
 Your server will be running on [http://localhost:3000/](http://localhost:3000/)
-server `/Users/hongymagic/sites` directory.
+server `/Users/hongymagic/sites` directory. All users will be prompted for login/password to get access to your site.
 
 You can also use command line options when invoking `statik` function.
 

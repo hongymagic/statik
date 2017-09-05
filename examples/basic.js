@@ -2,11 +2,10 @@
 // ## Barebones demonstration.
 //
 // The following code will serve everything inside `./public` over HTTP using
-// port 1203 (default).
+// port 3000 (default).
 //
 
 var statik = require('../index');
-var server = statik.createServer();
+statik();   // just run the server
 
-server.listen();
-console.log("server online at http://localhost:1203/");
+console.log("Server online at http://localhost:3000/");
